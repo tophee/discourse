@@ -99,6 +99,7 @@ After completing the setup wizard, you should see Staff topics and **READ ME FIR
 - We strongly suggest you turn on automatic security updates for your OS. In Ubuntu use the `dpkg-reconfigure -plow unattended-upgrades` command.
 - If you are using a password and not a SSH key, be sure to enforce a strong root password. In Ubuntu use the `apt-get install libpam-cracklib` package. We also recommend `apt-get install fail2ban` which will default block any IP addresses for 10 minutes that attempt more than 3 password retries.
 - If you need or want a default firewall, [turn on ufw](https://meta.discourse.org/t/configure-a-firewall-for-discourse/20584).
+- If you are using a third party email provider (like the ones listed [here][mailconfig]) we recommend that you activate their webhooks to allow discourse to handle bouncing emails as described [here](https://meta.discourse.org/t/handling-bouncing-e-mails/45343).
 
 You will get email reminders as new versions of Discourse are released. Please stay current to get the latest features and security fixes. To **upgrade Discourse to the latest version**, visit `/admin/upgrade` in your browser and click the Upgrade button.
 
