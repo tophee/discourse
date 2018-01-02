@@ -59,7 +59,7 @@ Launch the setup tool at
 
     ./discourse-setup
 
-Answer the following questions when prompted:
+Answer the following questions when prompted (The Let's Encrypt account is created for you on the fly - [HTTPS out of the box!](https://meta.discourse.org/t/setting-up-lets-encrypt-cert-with-discourse-docker/40709)):
 
     Hostname for your Discourse? [discourse.example.com]: 
     Email address for admin account? [me@example.com]: 
@@ -67,6 +67,7 @@ Answer the following questions when prompted:
     SMTP user name? [postmaster@discourse.example.com]: 
     SMTP port [587]:
     SMTP password? []: 
+    Let's Encrypt account email? (Enter 'OFF' to disable.) [me@example.com]:
 
 This will generate an `app.yml` configuration file on your behalf, and then kicks off bootstrap. Bootstrapping takes between **2-8 minutes** to set up your Discourse. If you need to change these settings after bootstrapping, you can run `./discourse-setup` again (it will read your old values from the file) or edit `/containers/app.yml` with `nano` and then `./launcher rebuild app`, otherwise your changes will not take effect.
 
@@ -130,11 +131,11 @@ Do you want...
 
 - Users to log in via [Google](https://meta.discourse.org/t/configuring-google-oauth2-login-for-discourse/15858), [Twitter](https://meta.discourse.org/t/configuring-twitter-login-for-discourse/13395), [GitHub](https://meta.discourse.org/t/configuring-github-login-for-discourse/13745), or  [Facebook](https://meta.discourse.org/t/configuring-facebook-login-for-discourse/13394)?
 
-- Users to post replies via email? [Configure reply via email](https://meta.discourse.org/t/set-up-reply-via-email-support/14003).
+- Users to post replies via email? [Configure reply via email](https://meta.discourse.org/t/set-up-reply-via-email-support/14003). A more advanced option is to have email replies [directly delivered to your discourse instance](https://meta.discourse.org/t/straightforward-direct-delivery-incoming-mail/49487).
 
 - Automatic daily backups? [Configure backups](https://meta.discourse.org/t/configure-automatic-backups-for-discourse/14855).
  
-- Free HTTPS / SSL support? [Configure Let's Encrypt](https://meta.discourse.org/t/setting-up-lets-encrypt-cert-with-discourse-docker/40709). Paid HTTPS / SSL support? [Configure SSL](https://meta.discourse.org/t/allowing-ssl-for-your-discourse-docker-setup/13847).
+- If you have not already setup free HTTPS / SSL support during the initiaö setup, [Configure Let's Encrypt](https://meta.discourse.org/t/setting-up-lets-encrypt-cert-with-discourse-docker/40709). Paid HTTPS / SSL support? [Configure SSL](https://meta.discourse.org/t/allowing-ssl-for-your-discourse-docker-setup/13847).
 
 - Use a plugin [from Discourse](https://github.com/discourse) or a third party? [Configure plugins](https://meta.discourse.org/t/install-a-plugin/19157) 
 
@@ -149,6 +150,8 @@ Do you want...
 - A user friendly [offline page when rebuilding or upgrading?](https://meta.discourse.org/t/adding-an-offline-page-when-rebuilding/45238)
 
 - To embed Discourse [in your WordPress install](https://github.com/discourse/wp-discourse), or [on your static HTML site](https://meta.discourse.org/t/embedding-discourse-comments-via-javascript/31963)?
+
+- To reduce downtime during maintenance, you might want to consider [moving to from a standalone container to separate web and data containers](https://meta.discourse.org/t/how-to-move-from-standalone-container-to-separate-web-and-data-containers/29413).
 
 Help us improve this guide! Feel free to ask about it on [meta.discourse.org][meta], or even better, submit a pull request.
 
